@@ -1,7 +1,7 @@
 streamlit
 pillow
 numpy
-opencv-python-headless
+opencv-contrib-python-headless
 imageio
 imageio-ffmpeg
 streamlit-image-coordinates
