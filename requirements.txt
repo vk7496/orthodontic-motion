@@ -4,3 +4,4 @@ numpy
 opencv-python-headless
 imageio
 imageio-ffmpeg
+streamlit-image-coordinates
