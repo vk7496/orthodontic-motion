@@ -49,7 +49,9 @@ def tps_warp(img_bgr, src_pts, dst_pts):
     matches = [cv2.DMatch(i, i, 0) for i in range(len(src_pts))]
     src_shape = src_pts.reshape(1, -1, 2)
     dst_shape = dst_pts.reshape(1, -1, 2)
-    tps.estimateTransformation(dst_shape, src_shape, matches)
+    # NOTE: source shape first, target shape second -- passing these
+    # reversed silently produces a near-identity warp (points barely move).
+    tps.estimateTransformation(src_shape, dst_shape, matches)
     warped = tps.warpImage(img_bgr)
     return warped
 
